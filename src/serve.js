@@ -1,7 +1,12 @@
+import cors from 'cors'; // Importa o pacote CORS
 import express from 'express';
 import mongoose from 'mongoose';
 
 const app = express();
+
+// Permitir requisições de qualquer IP ou servidor
+app.use(cors()); // Middleware CORS
+
 app.use(express.json()); // Middleware para processar JSON no corpo das requisições
 
 // Conectar ao MongoDB
